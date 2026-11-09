@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website work properly on mobile phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sai International School</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+            background: #071b3a;
+            color: white;
+            padding: 10px 6%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            width: 88%;
+            margin: auto;
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #f5b400;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+            font-weight: bold;
+            color: #071b3a;
+        }
+
+        .logo-text h2 {
+            color: #071b3a;
+            font-size: 20px;
+        }
+
+        .logo-text p {
+            color: #777;
+            font-size: 11px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #222;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #d69c00;
+        }
+
+        .apply-button {
+            background: #f5b400;
+            color: #071b3a !important;
+            padding: 12px 18px;
+            border-radius: 6px;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    rgba(3, 20, 45, 0.68),
+                    rgba(3, 20, 45, 0.68)
+                ),
+                url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+        }
+
+        /* =========================
+           MOUSE INTERACTIVE LINES
+        ========================= */
+
+        #mouse-lines-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            width: 88%;
+            max-width: 1200px;
+            margin: auto;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content span {
+            color: #f5b400;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .hero-content h1 {
+            font-size: 62px;
+            max-width: 750px;
+            margin: 15px 0;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 19px;
+            max-width: 650px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #f5b400;
+            color: #071b3a;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #071b3a;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 90px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #d69c00;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #071b3a;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .welcome-image img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .welcome-text h2 {
+            color: #071b3a;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           PROGRAMS
+        ========================= */
+
+        .programs {
+            background: #f5f7fa;
+        }
+
+        .program-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .program-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            color: #071b3a;
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           WHY US
+        ========================= */
+
+        .features {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #071b3a;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #777;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CAMPUS
+        ========================= */
+
+        .campus {
+            background: #071b3a;
+            color: white;
+        }
+
+        .campus .section-title h2 {
+            color: white;
+        }
+
+        .campus .section-title p {
+            color: #ddd;
+        }
+
+        .campus-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .campus-card {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .campus-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .campus-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .campus-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 20px;
+
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.8)
+            );
+
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ADMISSIONS
+        ========================= */
+
+        .admission {
+            background: #f5b400;
+            text-align: center;
+        }
+
+        .admission h2 {
+            color: #071b3a;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .admission p {
+            color: #071b3a;
+            margin-bottom: 25px;
+        }
+
+        .admission .btn {
+            background: #071b3a;
+            color: white;
+        }
+
+
+        /* =========================
+           NEWS
+        ========================= */
+
+        .news-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-content small {
+            color: #d69c00;
+            font-weight: bold;
+        }
+
+        .news-content h3 {
+            margin: 12px 0;
+            color: #071b3a;
+        }
+
+        .news-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #f5f7fa;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            color: #071b3a;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            padding: 15px;
+
+            background: #071b3a;
+            color: white;
+
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #041127;
+            color: white;
+            padding: 50px 6% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #bbb;
+            line-height: 1.7;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #bbb;
+        }
+
+        footer a:hover {
+            color: #f5b400;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #24314a;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #888;
+        }
+
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        .menu-button {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+
+            .welcome {
+                grid-template-columns: 1fr;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .campus-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .top-bar {
+                display: none;
+            }
+
+            nav {
+                width: 92%;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 180px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .campus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TOP INFORMATION BAR
+    ========================== -->
+
+    <div class="top-bar">
+
+        <div>
+            📞 +91 8333975808
+        </div>
+
+        <div>
+            ✉ info@saiinternationalschool.edu
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+
+                <div class="logo-circle">
+                    SIS
+                </div>
+
+                <div class="logo-text">
+                    <h2>Sai International School</h2>
+                    <p>Inspiring Minds • Building Futures</p>
+                </div>
+
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#academics">Academics</a>
+                </li>
+
+                <li>
+                    <a href="#campus">Campus</a>
+                </li>
+
+                <li>
+                    <a href="#news">News</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+                <li>
+                    <a class="apply-button" href="#admission">
+                        Apply Now
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="menu-button">
+                ☰
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <!-- Interactive mouse-line background -->
+        <canvas id="mouse-lines-canvas" aria-hidden="true"></canvas>
+
+        <div class="hero-content">
+
+            <span>WELCOME TO SAI INTERNATIONAL SCHOOL</span>
+
+            <h1>
+                Inspiring Minds.
+                Building Futures.
+            </h1>
+
+            <p>
+                A modern learning environment where students
+                discover their potential, develop confidence,
+                and prepare to make a positive difference in
+                the world.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#admission" class="btn btn-primary">
+                    Apply Now
+                </a>
+
+                <a href="#about" class="btn btn-secondary">
+                    Explore Our School
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT / WELCOME
+    ========================== -->
+
+    <section id="about">
+
+        <div class="welcome">
+
+            <div class="welcome-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1000&q=80"
+                    alt="School Campus"
+                >
+
+            </div>
+
+
+            <div class="welcome-text">
+
+                <span>ABOUT OUR SCHOOL</span>
+
+                <h2>
+                    Welcome to Sai International School
+                </h2>
+
+                <p>
+                    Sai International School is committed to
+                    providing an inspiring, inclusive and
+                    future-focused education for every student.
+                </p>
+
+                <p>
+                    Our approach combines academic excellence
+                    with creativity, technology, sports,
+                    leadership and character development.
+                </p>
+
+                <a href="#" class="btn btn-primary">
+                    Discover More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACADEMICS
+    ========================== -->
+
+    <section class="programs" id="academics">
+
+        <div class="section-title">
+
+            <span>ACADEMIC PROGRAMS</span>
+
+            <h2>
+                Learning for Every Stage
+            </h2>
+
+            <p>
+                Programs designed to help students learn,
+                explore and grow.
+            </p>
+
+        </div>
+
+
+        <div class="program-grid">
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    👶
+                </div>
+
+                <h3>
+                    Early Years
+                </h3>
+
+                <p>
+                    A joyful and engaging environment where
+                    young learners develop curiosity,
+                    confidence and foundational skills.
+                </p>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Primary School
+                </h3>
+
+                <p>
+                    Strong academic foundations combined with
+                    creativity, collaboration and practical
+                    learning experiences.
+                </p>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <div class="program-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Secondary School
+                </h3>
+
+                <p>
+                    Advanced learning that prepares students
+                    for higher education, careers and
+                    responsible citizenship.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY CHOOSE US
+    ========================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>WHY SAI INTERNATIONAL?</span>
+
+            <h2>
+                More Than Education
+            </h2>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Academic Excellence
+                </h3>
+
+                <p>
+                    High-quality teaching focused on
+                    meaningful learning.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    STEM & Technology
+                </h3>
+
+                <p>
+                    Encouraging students to explore science,
+                    technology and innovation.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⚽
+                </div>
+
+                <h3>
+                    Sports & Activities
+                </h3>
+
+                <p>
+                    Developing teamwork, discipline and
+                    healthy lifestyles.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌎
+                </div>
+
+                <h3>
+                    Global Outlook
+                </h3>
+
+                <p>
+                    Preparing students to become confident
+                    global citizens.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAMPUS
+    ========================== -->
+
+    <section class="campus" id="campus">
+
+        <div class="section-title">
+
+            <span>OUR CAMPUS</span>
+
+            <h2>
+                A Place to Learn & Grow
+            </h2>
+
+            <p>
+                Explore the facilities that make learning
+                exciting.
+            </p>
+
+        </div>
+
+
+        <div class="campus-grid">
+
+
+            <div class="campus-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1000&q=80"
+                    alt="Classroom"
+                >
+
+                <div class="campus-name">
+                    Smart Classrooms
+                </div>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=80"
+                    alt="Science Laboratory"
+                >
+
+                <div class="campus-name">
+                    Science Laboratories
+                </div>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1576618148400-ae1c3f4e6f22?auto=format&fit=crop&w=1000&q=80"
+                    alt="Library"
+                >
+
+                <div class="campus-name">
+                    Library
+                </div>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80"
+                    alt="Sports"
+                >
+
+                <div class="campus-name">
+                    Sports Facilities
+                </div>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80"
+                    alt="Students"
+                >
+
+                <div class="campus-name">
+                    Student Activities
+                </div>
+
+            </div>
+
+
+            <div class="campus-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1000&q=80"
+                    alt="School Building"
+                >
+
+                <div class="campus-name">
+                    School Campus
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ADMISSION
+    ========================== -->
+
+    <section class="admission" id="admission">
+
+        <h2>
+            Admissions Are Open
+        </h2>
+
+        <p>
+            Give your child an opportunity to learn,
+            discover and grow at Sai International School.
+        </p>
+
+        <a href="#contact" class="btn">
+            Start Your Application
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         NEWS
+    ========================== -->
+
+    <section id="news">
+
+        <div class="section-title">
+
+            <span>NEWS & EVENTS</span>
+
+            <h2>
+                What's Happening at SIS
+            </h2>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+            <div class="news-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80"
+                    alt="School Event"
+                >
+
+                <div class="news-content">
+
+                    <small>
+                        SCHOOL EVENT
+                    </small>
+
+                    <h3>
+                        Annual Sports Day
+                    </h3>
+
+                    <p>
+                        Students come together to celebrate
+                        teamwork, determination and sporting
+                        excellence.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=80"
+                    alt="Science Exhibition"
+                >
+
+                <div class="news-content">
+
+                    <small>
+                        ACADEMICS
+                    </small>
+
+                    <h3>
+                        Science Exhibition
+                    </h3>
+
+                    <p>
+                        Students showcase innovative projects
+                        and exciting scientific discoveries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80"
+                    alt="Graduation"
+                >
+
+                <div class="news-content">
+
+                    <small>
+                        CELEBRATION
+                    </small>
+
+                    <h3>
+                        Graduation Ceremony
+                    </h3>
+
+                    <p>
+                        Celebrating the achievements and
+                        accomplishments of our graduating
+                        students.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <span>CONTACT US</span>
+
+            <h2>
+                We'd Love to Hear From You
+            </h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h2>
+                    Sai International School
+                </h2>
+
+                <p>
+                    📍 Sai International School Campus,
+                    Vijayawada, Andhra Pradesh, India
+                </p>
+
+                <p>
+                    📞 +91 8333975808
+                </p>
+
+                <p>
+                    ✉ info@saiinternationalschool.edu
+                </p>
+
+                <p>
+                    🕐 Monday – Friday:
+                    8:00 AM – 4:00 PM
+                </p>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <form
+                    onsubmit="submitForm(event)"
+                >
+
+                    <input
+                        type="text"
+                        placeholder="Parent / Student Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Email Address"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        required
+                    >
+
+                    <textarea
+                        placeholder="How can we help you?"
+                        required
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Send Enquiry
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    Sai International School
+                </h3>
+
+                <p>
+                    Inspiring minds, building futures and
+                    empowering the next generation through
+                    meaningful education.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#academics">Academics</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Academics
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">Early Years</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Primary School</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Secondary School</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Admissions</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="#">YouTube</a>
+                    </li>
+
+                    <li>
+                        <a href="#">LinkedIn</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Sai International School.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Your enquiry has been received."
+            );
+
+        }
+
+
+        /* =========================
+           INTERACTIVE MOUSE LINES
+           ========================= */
+
+        const mouseCanvas = document.getElementById("mouse-lines-canvas");
+        const hero = document.querySelector(".hero");
+
+        if (mouseCanvas && hero) {
+
+            const ctx = mouseCanvas.getContext("2d");
+
+            let particles = [];
+
+            const mouse = {
+                x: null,
+                y: null,
+                active: false
+            };
+
+            function resizeMouseCanvas() {
+
+                const rect = hero.getBoundingClientRect();
+
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+                mouseCanvas.width = rect.width * dpr;
+                mouseCanvas.height = rect.height * dpr;
+
+                mouseCanvas.style.width = rect.width + "px";
+                mouseCanvas.style.height = rect.height + "px";
+
+                ctx.setTransform(
+                    dpr,
+                    0,
+                    0,
+                    dpr,
+                    0,
+                    0
+                );
+
+                createParticles(
+                    rect.width,
+                    rect.height
+                );
+            }
+
+
+            function createParticles(width, height) {
+
+                const numberOfParticles =
+                    Math.min(
+                        90,
+                        Math.max(
+                            35,
+                            Math.floor(
+                                (width * height) / 8000
+                            )
+                        )
+                    );
+
+                particles = [];
+
+                for (
+                    let i = 0;
+                    i < numberOfParticles;
+                    i++
+                ) {
+
+                    particles.push({
+
+                        x: Math.random() * width,
+
+                        y: Math.random() * height,
+
+                        vx:
+                            (Math.random() - 0.5)
+                            * 0.45,
+
+                        vy:
+                            (Math.random() - 0.5)
+                            * 0.45,
+
+                        radius:
+                            Math.random() * 1.5
+                            + 0.5
+
+                    });
+                }
+            }
+
+
+            function updateMousePosition(event) {
+
+                const rect =
+                    hero.getBoundingClientRect();
+
+                mouse.x =
+                    event.clientX - rect.left;
+
+                mouse.y =
+                    event.clientY - rect.top;
+
+                mouse.active = true;
+            }
+
+
+            hero.addEventListener(
+                "mousemove",
+                updateMousePosition
+            );
+
+
+            hero.addEventListener(
+                "mouseenter",
+                updateMousePosition
+            );
+
+
+            hero.addEventListener(
+                "mouseleave",
+                function () {
+
+                    mouse.active = false;
+
+                }
+            );
+
+
+            function animateMouseLines() {
+
+                const width = hero.clientWidth;
+
+                const height = hero.clientHeight;
+
+                ctx.clearRect(
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                /* Move particles */
+
+                particles.forEach(function (particle) {
+
+                    particle.x += particle.vx;
+
+                    particle.y += particle.vy;
+
+
+                    /* Bounce from edges */
+
+                    if (
+                        particle.x <= 0 ||
+                        particle.x >= width
+                    ) {
+
+                        particle.vx *= -1;
+
+                    }
+
+
+                    if (
+                        particle.y <= 0 ||
+                        particle.y >= height
+                    ) {
+
+                        particle.vy *= -1;
+
+                    }
+
+
+                    /* Mouse attraction */
+
+                    if (mouse.active) {
+
+                        const dx =
+                            mouse.x - particle.x;
+
+                        const dy =
+                            mouse.y - particle.y;
+
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
+
+
+                        if (
+                            distance < 180 &&
+                            distance > 1
+                        ) {
+
+                            const force =
+                                (180 - distance)
+                                / 180;
+
+                            particle.x -=
+                                (dx / distance)
+                                * force
+                                * 0.7;
+
+                            particle.y -=
+                                (dy / distance)
+                                * force
+                                * 0.7;
+
+                        }
+                    }
+
+                });
+
+
+                /* Connect particles to each other */
+
+                for (
+                    let i = 0;
+                    i < particles.length;
+                    i++
+                ) {
+
+                    for (
+                        let j = i + 1;
+                        j < particles.length;
+                        j++
+                    ) {
+
+                        const p1 =
+                            particles[i];
+
+                        const p2 =
+                            particles[j];
+
+                        const dx =
+                            p1.x - p2.x;
+
+                        const dy =
+                            p1.y - p2.y;
+
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
+
+
+                        if (distance < 115) {
+
+                            const opacity =
+                                (1 - distance / 115)
+                                * 0.45;
+
+                            ctx.beginPath();
+
+                            ctx.moveTo(
+                                p1.x,
+                                p1.y
+                            );
+
+                            ctx.lineTo(
+                                p2.x,
+                                p2.y
+                            );
+
+                            ctx.strokeStyle =
+                                "rgba(255,255,255," +
+                                opacity +
+                                ")";
+
+                            ctx.lineWidth = 0.7;
+
+                            ctx.stroke();
+
+                        }
+
+                    }
+
+                }
+
+
+                /* Connect mouse to nearby particles */
+
+                if (mouse.active) {
+
+                    particles.forEach(
+                        function (particle) {
+
+                            const dx =
+                                mouse.x -
+                                particle.x;
+
+                            const dy =
+                                mouse.y -
+                                particle.y;
+
+                            const distance =
+                                Math.sqrt(
+                                    dx * dx +
+                                    dy * dy
+                                );
+
+
+                            if (distance < 190) {
+
+                                const opacity =
+                                    (1 - distance / 190)
+                                    * 0.8;
+
+                                ctx.beginPath();
+
+                                ctx.moveTo(
+                                    mouse.x,
+                                    mouse.y
+                                );
+
+                                ctx.lineTo(
+                                    particle.x,
+                                    particle.y
+                                );
+
+                                ctx.strokeStyle =
+                                    "rgba(245,180,0," +
+                                    opacity +
+                                    ")";
+
+                                ctx.lineWidth = 1;
+
+                                ctx.stroke();
+
+                            }
+
+                        }
+                    );
+
+
+                    /* Mouse point */
+
+                    ctx.beginPath();
+
+                    ctx.arc(
+                        mouse.x,
+                        mouse.y,
+                        4,
+                        0,
+                        Math.PI * 2
+                    );
+
+                    ctx.fillStyle =
+                        "rgba(245,180,0,0.95)";
+
+                    ctx.fill();
+
+                }
+
+
+                /* Draw particles */
+
+                particles.forEach(
+                    function (particle) {
+
+                        ctx.beginPath();
+
+                        ctx.arc(
+                            particle.x,
+                            particle.y,
+                            particle.radius,
+                            0,
+                            Math.PI * 2
+                        );
+
+                        ctx.fillStyle =
+                            "rgba(255,255,255,0.75)";
+
+                        ctx.fill();
+
+                    }
+                );
+
+
+                requestAnimationFrame(
+                    animateMouseLines
+                );
+
+            }
+
+
+            window.addEventListener(
+                "resize",
+                resizeMouseCanvas
+            );
+
+
+            resizeMouseCanvas();
+
+            animateMouseLines();
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
